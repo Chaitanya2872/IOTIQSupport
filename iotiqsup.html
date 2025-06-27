@@ -15,132 +15,221 @@
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
             min-height: 100vh;
-            background: #f9fafb;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 16px;
+            background: #f3f4f6;
+            /* Remove centering and padding */
+            display: block;
+            padding: 0;
         }
 
         .container {
-            width: 100%;
-            max-width: 1024px;
-        }
-
-        .brand {
-            text-align: center;
-            margin-bottom: 48px;
-        }
-
-        .brand-text {
-            font-size: 48px;
-            font-weight: 700;
-            color: #111827;
-        }
-
-        .brand-text .o {
-            color: #f59e0b;
-        }
-
-        .section-label {
-            font-size: 14px;
-            font-weight: 500;
-            color: #6b7280;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            margin-bottom: 16px;
-            text-align: center;
-        }
-
-        .main-title {
-            font-size: 48px;
-            font-weight: 600;
-            color: #111827;
-            margin-bottom: 24px;
-            text-align: center;
-        }
-
-        .subtitle {
-            font-size: 20px;
-            color: #6b7280;
-            line-height: 1.5;
-            margin-bottom: 64px;
-            text-align: center;
-            max-width: 512px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .content-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-            gap: 32px;
-            align-items: center;
-            margin-bottom: 64px;
-        }
-
-        .icon-container {
+            width: 100vw;
+            height: 100vh;
+            max-width: none;
+            min-height: 100vh;
+            background: none;
+            border-radius: 0;
+            box-shadow: none;
+            overflow: hidden;
             display: flex;
+        }
+
+        .left-section {
+            width: 50%;
+            background: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 60px 40px;
+            height: 100vh;
+        }
+
+        .right-section {
+            width: 50%;
+            background: #f9fafb;
+            padding: 80px 60px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .warning-card {
+            background: #fff;
+            border-radius: 20px;
+            padding: 60px 40px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            width: 100%;
+            max-width: 320px;
+            min-height: 310px; /* Increased height */
             justify-content: center;
         }
 
-        .icon-circle {
-            width: 96px;
-            height: 96px;
-            background: #f3f4f6;
+        .warning-icon {
+            width: 80px;
+            height: 80px;
+            background: #fef2f2;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
+            margin-bottom: 24px;
         }
 
-        .icon-circle svg {
-            width: 48px;
-            height: 48px;
-            color: #9ca3af;
+        .warning-icon svg {
+            width: 32px;
+            height: 32px;
+            color: #ef4444;
+        }
+
+        .warning-title {
+            font-size: 18px;
+            font-weight: 500;
+            color: #374151;
+        }
+
+        .right-section {
+            flex: 1;
+            background: #f9fafb;
+            padding: 80px 60px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .brand {
+            font-size: 28px;
+            font-weight: 700;
+            color: #11271d;
+            letter-spacing: 2px;
+            margin-bottom: 40px;
+            position: relative;
+            display: inline-flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .brand img{
+            transform: translateX(+44px);
+        }
+
+        .brand-text {
+            display: flex;
+            align-items: center;
+        }
+
+        .brand-text .i {
+            color: #ef4444;
+        }
+
+        .brand-text .o {
+            color: #f97316;
+        }
+
+        .brand-text .t1 {
+            color: #eab308;
+        }
+
+        .brand-text .t2 {
+            color: #22c55e;
+        }
+
+        .brand-text .i2 {
+            color: #3b82f6;
+        }
+
+        .brand-text .q {
+            color: #8b5cf6;
+        }
+
+        .connect-label {
+            color: #c39c67;
+            font-size: 8px;
+            font-weight: 400;
+            letter-spacing: 16px;
+            margin-top: 4px;
+            transform: translateX(+56px);
+
+        }
+
+        .section-label {
+            font-size: 12px;
+            font-weight: 500;
+            color: #6b7280;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 16px;
+            transform: translateX(+56px);
+        }
+
+        .main-title {
+            font-size: 29px;
+            font-weight: 600;
+            color: #11271d;
+            margin-bottom: 16px;
+            line-height: 1.2;
+            transform: translateX(+56px);
+
+        }
+
+        .subtitle {
+            font-size: 15px;           /* Slightly smaller for better wrapping */
+            color: #6b7280;
+            line-height: 1.6;
+            margin-bottom: 32px;
+            transform: translateX(+56px);
+            max-width: 410px;          /* Adjust as needed for your layout */
+            white-space: normal;       /* Allow wrapping */
+            word-break: break-word;
         }
 
         .form-container {
-            display: flex;
-            flex-direction: column;
-            gap: 24px;
+            width: 100%;
+            max-width: 500px;
+            transform: translateX(+56px);
         }
 
         .form-input {
             width: 100%;
-            padding: 16px;
-            border: 1px solid #d1d5db;
+            padding: 8px 12px; /* Decreased height */
+            border: 2px solid #e5e7eb;
             background: white;
-            border-radius: 8px;
+            border-radius: 7px;
             font-family: 'Inter', sans-serif;
-            font-size: 18px;
-            color: #111827;
+            font-size: 13px;
+            color: #11271d;
             outline: none;
             transition: all 0.2s ease;
-            text-align: center;
+            margin-bottom: 24px;
+            line-height: 1.5rem;
         }
 
         .form-input:focus {
-            border-color: #f59e0b;
-            box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.1);
+            border-color: #c39c67;
+            box-shadow: 0 0 0 3px rgba(195, 156, 103, 0.1);
         }
 
         .form-input::placeholder {
             color: #9ca3af;
+            font-size: 13px;
         }
 
         .submit-btn {
             width: 100%;
-            padding: 16px;
-            background: #111827;
+            padding: 10px; /* Decreased height */
+            background: #11271d;
             color: white;
             border: none;
-            border-radius: 8px;
+            border-radius: 7px;
             font-family: 'Inter', sans-serif;
-            font-size: 16px;
+            font-size: 13px;
             font-weight: 500;
             cursor: pointer;
             transition: all 0.2s ease;
+            margin-bottom: 32px;
         }
 
         .submit-btn:hover {
@@ -153,18 +242,16 @@
             gap: 8px;
             color: #6b7280;
             text-decoration: none;
-            font-size: 16px;
+            font-size: 14px;
             font-weight: 500;
             transition: color 0.2s ease;
-            margin-top: 32px;
-            justify-content: center;
         }
 
         .back-link:hover {
-            color: #111827;
+            color: #11271d;
         }
 
-        .back-link svg {
+        .arrow-left {
             width: 16px;
             height: 16px;
         }
@@ -173,50 +260,43 @@
         .success-container {
             display: none;
             text-align: center;
+            width: 100%;
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 60px 40px;
         }
 
         .success-icon {
-            width: 96px;
-            height: 96px;
-            background: #dcfce7;
+            width: 80px;
+            height: 80px;
+            background: #f0fdf4;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 0 auto 32px;
+            margin: 0 auto 24px;
         }
 
-        .success-inner {
-            width: 48px;
-            height: 48px;
-            background: #22c55e;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .success-inner span {
-            color: white;
+        .success-checkmark {
+            width: 32px;
+            height: 32px;
+            color: #22c55e;
             font-size: 20px;
             font-weight: bold;
         }
 
         .success-title {
-            font-size: 48px;
+            font-size: 32px;
             font-weight: 600;
-            color: #111827;
-            margin-bottom: 24px;
+            color: #11271d;
+            margin-bottom: 16px;
         }
 
         .success-message {
-            font-size: 20px;
+            font-size: 16px;
             color: #6b7280;
             line-height: 1.5;
-            margin-bottom: 48px;
-            max-width: 512px;
-            margin-left: auto;
-            margin-right: auto;
+            margin-bottom: 32px;
         }
 
         .loading {
@@ -228,38 +308,38 @@
             background: #9ca3af;
         }
 
-        /* Mobile responsiveness */
-        @media (max-width: 1024px) {
-            .content-grid {
-                grid-template-columns: 1fr;
-                gap: 48px;
-            }
+        .success-container .brand {
+            align-items: center !important;
+            justify-content: center !important;
+            margin-left: auto;
+            margin-right: auto;
+            display: flex;
+            flex-direction: column;
+        }
 
-            .icon-container:first-child,
-            .icon-container:last-child {
-                display: none;
-            }
-
-            .main-title {
-                font-size: 36px;
-            }
-
-            .subtitle {
-                font-size: 18px;
-            }
-
-            .success-title {
-                font-size: 36px;
-            }
-
-            .success-message {
-                font-size: 18px;
+        @media (max-width: 900px) {
+            .success-container .brand {
+                align-items: center !important;
+                justify-content: center !important;
+                margin-left: auto;
+                margin-right: auto;
             }
         }
 
         @media (max-width: 768px) {
-            .brand-text {
-                font-size: 36px;
+            .container {
+                flex-direction: column;
+                min-height: auto;
+            }
+
+            .left-section,
+            .right-section {
+                padding: 40px 30px;
+            }
+
+            .warning-card {
+                padding: 40px 30px;
+                max-width: 280px;
             }
 
             .main-title {
@@ -267,92 +347,112 @@
             }
 
             .subtitle {
-                font-size: 16px;
-                margin-bottom: 48px;
-            }
-
-            .success-title {
-                font-size: 28px;
-            }
-
-            .success-message {
-                font-size: 16px;
-            }
-
-            .icon-circle {
-                width: 80px;
-                height: 80px;
-            }
-
-            .icon-circle svg {
-                width: 40px;
-                height: 40px;
-            }
-
-            .success-icon {
-                width: 80px;
-                height: 80px;
-            }
-
-            .success-inner {
-                width: 40px;
-                height: 40px;
+                font-size: 14px;
             }
         }
 
-        @media (max-width: 480px) {
-            .brand-text {
-                font-size: 28px;
+        @media (max-width: 900px) {
+            .container {
+                flex-direction: column;
+                width: 100vw;
+                height: auto;
+                min-height: 100vh;
             }
-
+            .left-section {
+                display: none !important;
+            }
+            .right-section {
+                width: 100%;
+            }
+            .right-section {
+                padding: 32px 16px;
+            }
+            .warning-card {
+                margin: 0 auto 32px auto;
+                max-width: 90vw;
+                min-width: 0;
+                padding: 32px 16px;
+            }
+            .brand {
+                flex-direction: column;
+                align-items: flex-start;
+                margin-bottom: 24px;
+            }
+            .connect-label {
+                order: -1;              /* Move above the logo */
+                margin-bottom: 6px;     /* Add spacing below CONNECT */
+                margin-top: 0;
+                transform: none !important;
+            }
+            .brand img {
+                transform: translateY(-67px) !important;
+            }
             .main-title {
-                font-size: 24px;
+                font-size: 22px;
+                margin-bottom: 10px;
+                transform: none;
+            }
+            .section-label,
+            .connect-label,
+            .subtitle,
+            .form-container {
+                transform: none;
+                margin-left: 0;
+                max-width: 100%;
             }
 
+            .brand img {
+                transform: translateY(-80px);
+            }
+
+            .connect-label {
+                transform: translateY(-127px);
+                transform: translateX(+14px) !important ;
+            }
             .subtitle {
+                font-size: 13px;
+                max-width: 390px;
+            }
+            .form-container {
+                max-width: 100%;
+            }
+            .form-input,
+            .submit-btn {
                 font-size: 14px;
+                padding: 8px 10px;
             }
-
-            .success-title {
-                font-size: 24px;
-            }
-
-            .success-message {
-                font-size: 14px;
-            }
-
-            .form-input {
-                font-size: 16px;
-                padding: 14px;
-            }
-
-            .content-grid {
-                gap: 32px;
+            .success-container {
+                padding: 32px 16px;
+                max-width: 100%;
             }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <div id="mainView">
-            <div class="brand">
-                <div class="brand-text">I<span class="o">O</span>TIQ</div>
-            </div>
-            
-            <div class="section-label">ACCOUNT DELETION</div>
-            <h1 class="main-title">Delete Your Account</h1>
-            <p class="subtitle">
-                Please provide your contact information below. Our support team will reach out to process your request.
-            </p>
-
-            <div class="content-grid">
-                <div class="icon-container">
-                    <div class="icon-circle">
+        <div id="mainView" style="display: flex; width: 100%;">
+            <div class="left-section">
+                <div class="warning-card">
+                    <div class="warning-icon">
                         <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.732-.833-2.5 0L4.312 16.5c-.77.833.192 2.5 1.732 2.5z"></path>
                         </svg>
                     </div>
+                    <div class="warning-title">Account Deletion</div>
                 </div>
+            </div>
+
+            <div class="right-section">
+                <div class="brand">
+                    <!-- Replace brand text with an image -->
+                    <img src="images/iotiqLM.png" alt="IOTIQ Logo" style="height:40px;">
+                    <div class="connect-label">CONNECT</div>
+                </div>
+                <div class="section-label">ACCOUNT DELETION</div>
+                <h1 class="main-title">Delete Your Account</h1>
+                <p class="subtitle">
+                    Please provide your email address or phone number. Our support team will contact you to process your request.
+                </p>
 
                 <div class="form-container">
                     <form id="deleteForm">
@@ -367,46 +467,25 @@
                             Submit Request
                         </button>
                     </form>
-                    <div style="text-align: center;">
-                        <a href="#" class="back-link">
-                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
-                            </svg>
-                            Back to Variations
-                        </a>
-                    </div>
-                </div>
-
-                <div class="icon-container">
-                    <div class="icon-circle">
-                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
-                        </svg>
-                    </div>
                 </div>
             </div>
         </div>
 
         <div id="successView" class="success-container">
             <div class="brand">
-                <div class="brand-text">I<span class="o">O</span>TIQ</div>
+                <!-- Replace brand text with an image -->
+                <img src="images/iotiqLM.png" alt="IOTIQ Logo" style="height:40px;">
+                <div class="connect-label">CONNECT</div>
             </div>
-            
             <div class="success-icon">
-                <div class="success-inner">
-                    <span>✓</span>
-                </div>
+                <svg class="success-checkmark" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path>
+                </svg>
             </div>
             <h2 class="success-title">Request Received</h2>
             <p class="success-message">
                 Our support team will contact you shortly to process your account deletion request.
             </p>
-            <a href="#" class="back-link">
-                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
-                </svg>
-                Back to Variations
-            </a>
         </div>
     </div>
 
@@ -453,7 +532,7 @@ Thank you.`);
                 
                 // Reset after 6 seconds
                 setTimeout(() => {
-                    mainView.style.display = 'block';
+                    mainView.style.display = 'flex';
                     successView.style.display = 'none';
                     form.reset();
                     submitBtn.innerHTML = 'Submit Request';
@@ -462,12 +541,6 @@ Thank you.`);
         });
 
         // Handle back button clicks
-        document.querySelectorAll('.back-link').forEach(link => {
-            link.addEventListener('click', function(e) {
-                e.preventDefault();
-                console.log('Navigate back to variations');
-            });
-        });
     </script>
 </body>
 </html>
