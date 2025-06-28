@@ -16,7 +16,6 @@
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
             min-height: 100vh;
             background: #f3f4f6;
-            /* Remove centering and padding */
             display: block;
             padding: 0;
         }
@@ -64,7 +63,7 @@
             text-align: center;
             width: 100%;
             max-width: 320px;
-            min-height: 310px; /* Increased height */
+            min-height: 310px;
             justify-content: center;
         }
 
@@ -91,15 +90,6 @@
             color: #374151;
         }
 
-        .right-section {
-            flex: 1;
-            background: #f9fafb;
-            padding: 80px 60px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-
         .brand {
             font-size: 28px;
             font-weight: 700;
@@ -112,7 +102,7 @@
             align-items: flex-start;
         }
 
-        .brand img{
+        .brand img {
             transform: translateX(+44px);
         }
 
@@ -152,7 +142,6 @@
             letter-spacing: 16px;
             margin-top: 4px;
             transform: translateX(+56px);
-
         }
 
         .section-label {
@@ -172,17 +161,16 @@
             margin-bottom: 16px;
             line-height: 1.2;
             transform: translateX(+56px);
-
         }
 
         .subtitle {
-            font-size: 15px;           /* Slightly smaller for better wrapping */
+            font-size: 15px;
             color: #6b7280;
             line-height: 1.6;
             margin-bottom: 32px;
             transform: translateX(+56px);
-            max-width: 410px;          /* Adjust as needed for your layout */
-            white-space: normal;       /* Allow wrapping */
+            max-width: 410px;
+            white-space: normal;
             word-break: break-word;
         }
 
@@ -194,7 +182,7 @@
 
         .form-input {
             width: 100%;
-            padding: 8px 12px; /* Decreased height */
+            padding: 8px 12px;
             border: 2px solid #e5e7eb;
             background: white;
             border-radius: 7px;
@@ -219,7 +207,7 @@
 
         .submit-btn {
             width: 100%;
-            padding: 10px; /* Decreased height */
+            padding: 10px;
             background: #11271d;
             color: white;
             border: none;
@@ -234,6 +222,22 @@
 
         .submit-btn:hover {
             background: #1f2937;
+        }
+
+        .submit-btn:disabled {
+            background: #9ca3af;
+            cursor: not-allowed;
+        }
+
+        .error-message {
+            color: #ef4444;
+            font-size: 13px;
+            margin-top: 8px;
+            display: none;
+            padding: 8px;
+            background: #fef2f2;
+            border-radius: 4px;
+            border: 1px solid #fecaca;
         }
 
         .back-link {
@@ -256,7 +260,6 @@
             height: 16px;
         }
 
-        /* Success state */
         .success-container {
             display: none;
             text-align: center;
@@ -304,10 +307,6 @@
             pointer-events: none;
         }
 
-        .loading .submit-btn {
-            background: #9ca3af;
-        }
-
         .success-container .brand {
             display: flex;
             flex-direction: column;
@@ -319,56 +318,11 @@
         }
 
         .success-container .brand .connect-label {
-            order: 1;              /* Place CONNECT below the image */
-            margin-top: 8px;       /* Space between image and CONNECT */
+            order: 1;
+            margin-top: 8px;
             margin-bottom: 0;
             align-self: center;
             transform: translateX(+49px) !important;
-        }
-
-        @media (max-width: 900px) {
-            .success-container .brand {
-                align-items: center !important;
-                justify-content: center !important;
-                margin-left: auto;
-                margin-right: auto;
-            }
-
-            .success-container .brand img {
-                transform: translateX(-20px) !important;
-            }
-
-
-
-            .success-container .brand .connect-label {
-                margin-left: -18px; /* Move CONNECT label a bit to the left */
-                transform: translateX(-10px) !important; /* Adjust position */
-            }
-        }
-
-        @media (max-width: 768px) {
-            .container {
-                flex-direction: column;
-                min-height: auto;
-            }
-
-            .left-section,
-            .right-section {
-                padding: 40px 30px;
-            }
-
-            .warning-card {
-                padding: 40px 30px;
-                max-width: 280px;
-            }
-
-            .main-title {
-                font-size: 28px;
-            }
-
-            .subtitle {
-                font-size: 14px;
-            }
         }
 
         @media (max-width: 900px) {
@@ -383,8 +337,6 @@
             }
             .right-section {
                 width: 100%;
-            }
-            .right-section {
                 padding: 32px 16px;
             }
             .warning-card {
@@ -399,13 +351,13 @@
                 margin-bottom: 24px;
             }
             .connect-label {
-                order: -1;              /* Move above the logo */
-                margin-bottom: 6px;     /* Add spacing below CONNECT */
+                order: -1;
+                margin-bottom: 6px;
                 margin-top: 0;
-                transform: none !important;
+                transform: translateX(+14px) !important;
             }
             .brand img {
-                transform: translateY(-67px) !important;
+                transform: translateY(-80px) !important;
             }
             .main-title {
                 font-size: 22px;
@@ -413,21 +365,11 @@
                 transform: none;
             }
             .section-label,
-            .connect-label,
             .subtitle,
             .form-container {
                 transform: none;
                 margin-left: 0;
                 max-width: 100%;
-            }
-
-            .brand img {
-                transform: translateY(-80px);
-            }
-
-            .connect-label {
-                transform: translateY(-127px);
-                transform: translateX(+14px) !important ;
             }
             .subtitle {
                 font-size: 13px;
@@ -445,21 +387,53 @@
                 padding: 32px 16px;
                 max-width: 100%;
             }
-
-        .success-title {
-            font-size: 22px;
-            font-weight: 600;
-            color: #11271d;
-            margin-bottom: 16px;
+            .success-title {
+                font-size: 22px;
+                font-weight: 600;
+                color: #11271d;
+                margin-bottom: 16px;
+            }
+            .success-message {
+                font-size: 12px;
+                color: #6b7280;
+                line-height: 1.5;
+                margin-bottom: 32px;
+            }
+            .success-container .brand {
+                align-items: center !important;
+                justify-content: center !important;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            .success-container .brand img {
+                transform: translateX(-20px) !important;
+            }
+            .success-container .brand .connect-label {
+                margin-left: -18px;
+                transform: translateX(-10px) !important;
+            }
         }
 
-        .success-message {
-            font-size: 12px;
-            color: #6b7280;
-            line-height: 1.5;
-            margin-bottom: 32px;
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                min-height: auto;
+            }
+            .left-section,
+            .right-section {
+                padding: 40px 30px;
+            }
+            .warning-card {
+                padding: 40px 30px;
+                max-width: 280px;
+            }
+            .main-title {
+                font-size: 28px;
+            }
+            .subtitle {
+                font-size: 14px;
+            }
         }
-    } /* <-- This closes the @media (max-width: 900px) block */
     </style>
 </head>
 <body>
@@ -478,7 +452,6 @@
 
             <div class="right-section">
                 <div class="brand">
-                    <!-- Replace brand text with an image -->
                     <img src="images/iotiqLM.png" alt="IOTIQ Logo" style="height:40px;">
                     <div class="connect-label">CONNECT</div>
                 </div>
@@ -500,7 +473,7 @@
                         <button type="submit" class="submit-btn" id="submitBtn">
                             Submit Request
                         </button>
-                        <div id="formError" style="color:#ef4444; font-size:13px; margin-top:8px; display:none;"></div>
+                        <div id="formError" class="error-message"></div>
                     </form>
                 </div>
             </div>
@@ -508,7 +481,6 @@
 
         <div id="successView" class="success-container">
             <div class="brand">
-                <!-- Replace brand text with an image -->
                 <img src="images/iotiqLM.png" alt="IOTIQ Logo" style="height:40px;">
                 <div class="connect-label">CONNECT</div>
             </div>
@@ -525,72 +497,126 @@
     </div>
 
     <script>
-    // Replace the fetch call in your index.html script section with this:
-
-document.getElementById('deleteForm').addEventListener('submit', function (e) {
-    e.preventDefault();
-
-    const form = this;
-    const submitBtn = document.getElementById('submitBtn');
-    const mainView = document.getElementById('mainView');
-    const successView = document.getElementById('successView');
-    const container = document.querySelector('.container');
-    const errorDiv = document.getElementById('formError');
-
-    const contact = document.getElementById('contact').value.trim();
-
-    if (!contact) {
-        errorDiv.textContent = 'Please enter your email address or phone number.';
-        errorDiv.style.display = 'block';
-        return;
-    }
-
-    // Hide any previous errors
-    errorDiv.style.display = 'none';
-    
-    container.classList.add('loading');
-    submitBtn.innerHTML = 'Processing...';
-
-    // Updated API call - change the URL to match your server port
-    fetch('/api/send-email', {  // Use relative URL since frontend is served from same server
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ contact })
-    })
-    .then(response => {
-        if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        return response.json();
-    })
-    .then(data => {
-        if (data.message === 'Email sent successfully') {
-            mainView.style.display = 'none';
-            successView.style.display = 'block';
-        } else {
-            throw new Error(data.error || 'Unknown error occurred');
-        }
-    })
-    .catch(error => {
-        console.error('Error sending email:', error);
-        errorDiv.textContent = 'An error occurred. Please try again later.';
-        errorDiv.style.display = 'block';
-    })
-    .finally(() => {
-        container.classList.remove('loading');
-        submitBtn.innerHTML = 'Submit Request';
-
-        // Only reset if successful (when success view is shown)
-        if (successView.style.display === 'block') {
-            setTimeout(() => {
-                mainView.style.display = 'flex';
-                successView.style.display = 'none';
-                form.reset();
-                errorDiv.style.display = 'none';
-            }, 6000);
-        }
-    });
-});
-</script>
+        document.getElementById('deleteForm').addEventListener('submit', async function (e) {
+            e.preventDefault();
+            
+            const form = this;
+            const submitBtn = document.getElementById('submitBtn');
+            const mainView = document.getElementById('mainView');
+            const successView = document.getElementById('successView');
+            const container = document.querySelector('.container');
+            const errorDiv = document.getElementById('formError');
+            const contactInput = document.getElementById('contact');
+            
+            const contact = contactInput.value.trim();
+            
+            // Clear previous errors
+            errorDiv.style.display = 'none';
+            errorDiv.textContent = '';
+            
+            // Validate input
+            if (!contact) {
+                showError('Please enter your email address or phone number.');
+                return;
+            }
+            
+            // Basic validation for email or phone
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            const phoneRegex = /^[\+]?[1-9][\d]{0,15}$/;
+            
+            if (!emailRegex.test(contact) && !phoneRegex.test(contact.replace(/[\s\-\(\)]/g, ''))) {
+                showError('Please enter a valid email address or phone number.');
+                return;
+            }
+            
+            // Show loading state
+            setLoadingState(true);
+            
+            try {
+                console.log('Sending request to:', '/api/send-email');
+                console.log('Request data:', { contact });
+                
+                const response = await fetch('/api/send-email', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ contact })
+                });
+                
+                console.log('Response status:', response.status);
+                console.log('Response headers:', response.headers);
+                
+                let data;
+                try {
+                    const contentType = response.headers.get('content-type');
+                    if (contentType && contentType.includes('application/json')) {
+                        data = await response.json();
+                        console.log('Response data:', data);
+                    } else {
+                        const text = await response.text();
+                        console.warn('Non-JSON response:', text);
+                        throw new Error('Invalid response from server');
+                    }
+                } catch (parseError) {
+                    console.error('Error parsing JSON response:', parseError);
+                    throw new Error('Invalid response from server');
+                }
+                
+                if (!response.ok) {
+                    throw new Error(data.error || `Server error: ${response.status}`);
+                }
+                
+                if (data.message === 'Email sent successfully') {
+                    // Show success view
+                    mainView.style.display = 'none';
+                    successView.style.display = 'block';
+                    
+                    // Reset form after 6 seconds
+                    setTimeout(() => {
+                        mainView.style.display = 'flex';
+                        successView.style.display = 'none';
+                        form.reset();
+                    }, 6000);
+                } else {
+                    throw new Error(data.error || 'Unexpected response from server');
+                }
+                
+            } catch (error) {
+                console.error('Request failed:', error);
+                
+                // Show specific error messages
+                if (error.name === 'TypeError' && error.message.includes('fetch')) {
+                    showError('Unable to connect to server. Please check if the server is running.');
+                } else if (error.message.includes('404')) {
+                    showError('API endpoint not found. Please check server configuration.');
+                } else if (error.message.includes('500')) {
+                    showError('Server error. Please check server logs and configuration.');
+                } else {
+                    showError(error.message || 'An unexpected error occurred. Please try again later.');
+                }
+            } finally {
+                setLoadingState(false);
+            }
+            
+            function showError(message) {
+                errorDiv.textContent = message;
+                errorDiv.style.display = 'block';
+                contactInput.focus();
+            }
+            
+            function setLoadingState(isLoading) {
+                if (isLoading) {
+                    container.classList.add('loading');
+                    submitBtn.disabled = true;
+                    submitBtn.textContent = 'Processing...';
+                } else {
+                    container.classList.remove('loading');
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = 'Submit Request';
+                }
+            }
+        });
+    </script>
 </body>
 </html>
